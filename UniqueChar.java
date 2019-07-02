@@ -1,40 +1,43 @@
-//import java.util.*;
-//     import java.util.regex.*;
-//     public class UniqueChar{
-//         public static void main(String[] args){
-//             Scanner input = new Scanner(System.in);
-//             System.out.println("Enter the sentence:");
-//             String sen = input.nextLine();
-//             Pattern pattern = Pattern.compile("^[a-zA-Z]*$");
-//            Matcher matcher = pattern.matcher(sen);
-//            if(matcher.matches()){
-//               System.out.println("Invalid Sentence");
-//                System.exit(0);
-//            }
-//            
-//           allunique(sen);
-//            
-//        }
-//       private static void allunique(String sen){
-//            int [] count = new int[256];
-//            
-//            for (int i=0; i<sen.length(); i++){
-//                char ch = sen.charAt(i);
-//                count[ch]++;
-//                // Pattern p = Pattern.compile(0-9);
-//                // Matcher m = p.m(sen.charAt(i));
-//                // if(m.matches()){
-//               //     System.out.println("Invalid Sentence");
-//              // }
-//               }
-//               System.out.println("Unique characters:");
-//               for(int i =0; i<sen.length(); i++){
-//                   char chh =sen.charAt(i);
-//                    if(count[chh] == 1){
-//                        System.out.println(sen.charAt(i));
-//                    }
-//                
-//               }
-//               
-//       } 
-//       }
+import java.util.Scanner;
+
+public class UniqueChar{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the sentence:");
+        String s = sc.nextLine();
+        
+        for (int i = 0; i < s.length(); i++){
+            if(!(Character.isLetter(s.charAt(i)) || s.charAt(i) == ' ')){
+                System.out.println("Invalid Sentence");
+                System.exit(0);
+            }
+        }
+        
+        int count[] = new int[256];
+        
+        int i;
+        for (i = 0; i < s.length(); i++){
+            if(s.charAt(i) != ' '){
+                count[(int)s.charAt(i)]++;
+            }
+        }
+        boolean state1 = false;
+        boolean state2 = false;
+        int n = i;
+        for(i = 0; i < n; i++){
+            if (count[(int)s.charAt(i)] == 1){
+                if (!state1){
+                    System.out.println("Unique characters:");
+                }
+                System.out.println(s.charAt(i));
+                state1 = true;
+                state2 = true;
+            }
+        }
+        
+        if(!state2){
+            System.out.println("No unique characters");
+        }
+    }
+}
