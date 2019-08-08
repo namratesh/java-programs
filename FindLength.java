@@ -10,11 +10,11 @@ public class FindLength {
 		String str = sc.nextLine();
 		
 
-		
+//			
 			
 			 for (int i = 0; i < str.length(); i++){
 				                if(!(Character.isLetter(str.charAt(i)) || str.charAt(i) == ' ')){
-				                    System.out.println("Invalid Sentence");
+				                    System.out.println("Invalid String");
 				                    System.exit(0); 
 				                }
 				               }

@@ -8,7 +8,7 @@ public class CinemaTicket {
         int ticket = sc.nextInt();
         float total_cost = 0;
         float ref_cost = 0;
-        if ((ticket <= 40) || (ticket >= 5)){
+        if ((ticket <= 40) && (ticket >= 5)){
             
             System.out.println("Do you want refreshment:");
             char ref = sc.next().charAt(0);

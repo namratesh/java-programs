@@ -1,6 +1,3 @@
-
-
-import java.util.Scanner;
 import java.util.*;
 public class ReplaceWord{
     public static void main(String[] args){
@@ -11,7 +8,7 @@ public class ReplaceWord{
         System.out.println("Enter the word to be searched:");
         String str_ch = input.nextLine();
         
-        System.out.println("Enter the word to be replace:");
+        System.out.println("Enter the word to be replaced:");
         String str_re = input.nextLine();
         
         if(str.contains(str_ch)){
